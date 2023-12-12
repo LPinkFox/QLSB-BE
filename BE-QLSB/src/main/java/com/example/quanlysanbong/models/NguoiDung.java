@@ -24,7 +24,7 @@ public class NguoiDung {
     private String soDienThoai;
 
     @Getter
-    @Column(name = "HoTen")
+    @Column(name = "HoTen", columnDefinition = "NVARCHAR(200)")
     private String hoTen;
 
     @Getter
@@ -32,7 +32,7 @@ public class NguoiDung {
     private String passWord;
 
     @Getter
-    @Column(name = "DiaChi")
+    @Column(name = "DiaChi", columnDefinition = "NVARCHAR(200)")
     private String diaChi;
 
     @Getter
