@@ -1,12 +1,20 @@
-import React, { useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import './LoginSignup.css'
-const LoginSignup = () => {
+import { useNavigate } from 'react-router-dom';
+const LoginSignup = ({ setIsLoggedIn }) => {
     const [submit, setSubmit] = useState('Sign up');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [password, setPassword] = useState('');
     const [name, setName] = useState('');
     const [adress, setAdress] = useState('');
+    const navigate = useNavigate();
+    const resetIsLoggedIn = useCallback(() => {
+        setIsLoggedIn(false);
+    }, [setIsLoggedIn]);
 
+    useEffect(() => {
+        resetIsLoggedIn();
+    }, [navigate, resetIsLoggedIn]);
     const handerPhoneNumberChange = (event) => {
         setPhoneNumber(event.target.value);
 
@@ -42,8 +50,11 @@ const LoginSignup = () => {
                 const responseData = await response.json();
                 if (response.ok) {
                     // Xử lý khi request thành công
-                    alert(`Xin chào ${responseData.hoTen}`)
-                    console.log('Đăng nhập thành công!');
+                    alert(`Xin chào ${responseData.hoTen}`);
+                    setIsLoggedIn(true);
+
+                    navigate('/home');
+
                 } else {
                     // Xử lý khi request thất bại
                     alert('Đăng nhập thất bại');
