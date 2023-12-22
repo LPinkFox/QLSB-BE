@@ -1,9 +1,10 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import Product from './Product';
-import { Products } from '../Products';
+import Products from '../Products';
+import Product from './Product'
 import "./shop.css"
 const Shop = () => {
+    console.log(Products);
     return (
         <>
             <Navbar />

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import Navbar from '../components/Navbar'
-import { Products } from '../Products'
+import Products from '../Products'
 import { ShopContext } from '../contexts/ShopContext'
 import { CartItem } from './CartItem'
 import "./cart.css"

@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react'
-import { Products } from "../Products"
+import Products from "../Products.js"
 export const ShopContext = createContext(null);
 const getDefaultCart = () => {
     let cart = {};
@@ -8,6 +8,7 @@ const getDefaultCart = () => {
     }
     return cart;
 };
+
 export const ShopContextProvider = (props) => {
     const [cartItems, setCartItems] = useState(getDefaultCart());
 
@@ -46,7 +47,7 @@ export const ShopContextProvider = (props) => {
         getTotalCartAmount,
         checkout,
     };
-    console.log(cartItems);
+
     return (
         <ShopContext.Provider value={contextValue}>
             {props.children}

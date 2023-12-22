@@ -19,7 +19,7 @@ public class SanBong {
     @Column(name = "Gia")
     private Integer gia;
 
-    @Column(name = "TenSan")
+    @Column(name = "TenSan", columnDefinition = "NVARCHAR(200)")
     private String tenSan;
 
     @OneToMany(mappedBy = "sanBong")

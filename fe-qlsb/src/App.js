@@ -1,19 +1,24 @@
 
 import './App.css';
-import LoginSignup from './Components/LoginSignup/LoginSignup';
-import HomePage from './Components/Home/HomePage';
-import React, { useState } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { LoginSignup } from './Page/LoginSignup';
+import { shop } from './Page/shop'
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { cart } from './Page/cart'
+import { loginContextProvider } from './context/login-context'
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
     <div>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/home' element={<HomePage isLoggedIn={isLoggedIn} />} />
-          <Route path='/' element={<LoginSignup setIsLoggedIn={setIsLoggedIn} />} />
-        </Routes>
-      </BrowserRouter >
+      <loginContextProvider>
+        <Router>
+          <Routes>
+            <Route path='/cart' element={<cart />} />
+            <Route path='/shop' element={<shop />} />
+            <Route path='/' element={<LoginSignup />} />
+          </Routes>
+        </Router>
+      </loginContextProvider>
+
     </div>
   )
 }

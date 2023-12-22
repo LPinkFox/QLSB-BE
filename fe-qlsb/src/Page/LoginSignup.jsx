@@ -1,23 +1,27 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useContext, useEffect, useState } from 'react'
 import './LoginSignup.css'
 import { useNavigate } from 'react-router-dom';
-const LoginSignup = ({ setIsLoggedIn }) => {
-    const [submit, setSubmit] = useState('Sign up');
+import { loginContext } from '../context/login-context'
+import { userContext } from '../context/user-context'
+const LoginSignup = () => {
+    const [submit, setSubmit] = useState('Login');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [password, setPassword] = useState('');
     const [name, setName] = useState('');
     const [adress, setAdress] = useState('');
     const navigate = useNavigate();
+    const { loged } = useContext(loginContext);
+    const { setCurUser } = useContext(userContext);
     const resetIsLoggedIn = useCallback(() => {
-        setIsLoggedIn(false);
-    }, [setIsLoggedIn]);
+        loged(false);
+    }, [loged]);
 
     useEffect(() => {
         resetIsLoggedIn();
     }, [navigate, resetIsLoggedIn]);
+
     const handerPhoneNumberChange = (event) => {
         setPhoneNumber(event.target.value);
-
     }
     const handerPassWordChange = (event) => {
         setPassword(event.target.value);
@@ -34,12 +38,13 @@ const LoginSignup = ({ setIsLoggedIn }) => {
     const handleLogIn = async () => {
         if (submit === 'Login') {
             try {
-                const apiUrl = 'http://localhost:8080/NguoiDung/Login'; // Thay thế bằng URL của API backend
+                const apiUrl = 'http://localhost:8080/NguoiDung/Login';
 
                 const data = {
                     "soDienThoai": phoneNumber,
                     "passWord": password
                 };
+                console.log(data);
                 const response = await fetch(apiUrl, {
                     method: 'POST',
                     headers: {
@@ -51,9 +56,9 @@ const LoginSignup = ({ setIsLoggedIn }) => {
                 if (response.ok) {
                     // Xử lý khi request thành công
                     alert(`Xin chào ${responseData.hoTen}`);
-                    setIsLoggedIn(true);
-
-                    navigate('/home');
+                    loged(true);
+                    setCurUser(responseData);
+                    navigate('/shop');
 
                 } else {
                     // Xử lý khi request thất bại

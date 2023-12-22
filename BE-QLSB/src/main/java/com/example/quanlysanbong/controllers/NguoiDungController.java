@@ -1,11 +1,15 @@
 package com.example.quanlysanbong.controllers;
 
 import com.example.quanlysanbong.models.NguoiDung;
+import com.example.quanlysanbong.models.SanPham;
 import com.example.quanlysanbong.services.NguoiDungService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
 @CrossOrigin
 @RestController
 @RequestMapping("/NguoiDung")
@@ -30,5 +34,11 @@ public class NguoiDungController {
     public ResponseEntity<NguoiDung> signUp(@RequestBody NguoiDung nguoiDung){
         nguoiDungService.signUp(nguoiDung);
         return new ResponseEntity(nguoiDung,HttpStatus.OK);
+    }
+
+    @GetMapping("/AllProduct")
+    public ResponseEntity<List<SanPham>> getAllProducts(){
+        List<SanPham> sanPhamList = nguoiDungService.getAllProducts();
+        return new ResponseEntity<>(sanPhamList, HttpStatus.OK);
     }
 }

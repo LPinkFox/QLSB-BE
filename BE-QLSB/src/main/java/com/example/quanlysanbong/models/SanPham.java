@@ -24,7 +24,7 @@ public class SanPham {
     @Column(name = "SoLuongConLai")
     private Integer soLuong;
 
-    @Column(name = "TenSanPham")
+    @Column(name = "TenSanPham", columnDefinition = "NVARCHAR(200)")
     private String ten;
 
     @OneToMany(mappedBy = "sanPham")
