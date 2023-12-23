@@ -29,7 +29,7 @@ const LoginSignup = () => {
     const handerLogin = async () => {
         if (submit === 'Login') {
             try {
-                const loginAPI = 'http://localhost:8080/NguoiDung/Login'
+                const loginAPI = 'https://sanbongbkhn.azurewebsites.net/NguoiDung/Login'
                 const data = {
                     "soDienThoai": phoneNumber,
                     "passWord": password
@@ -62,7 +62,7 @@ const LoginSignup = () => {
     const handerSignup = async () => {
         if (submit === 'Signup') {
             try {
-                const signUpAPI = 'http://localhost:8080/NguoiDung/SignUp';
+                const signUpAPI = 'https://sanbongbkhn.azurewebsites.net/NguoiDung/SignUp';
                 const data = {
                     "soDienThoai": phoneNumber,
                     "hoTen": name,

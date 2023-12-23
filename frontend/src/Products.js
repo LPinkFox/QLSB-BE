@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8080/NguoiDung/AllProduct';
+const API_URL = 'https://sanbongbkhn.azurewebsites.net/NguoiDung/AllProduct';
 
 const fetchData = async () => {
     try {
