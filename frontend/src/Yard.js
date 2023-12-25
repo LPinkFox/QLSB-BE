@@ -1,23 +1,17 @@
-import { allProductAPI } from './API'
-
-const fetchData = async () => {
+import { allYardAPI, allYardRentedAPI } from './API'
+const fetchData = async (APIlink) => {
     try {
-        const response = await fetch(allProductAPI);
+        const response = await fetch(APIlink);
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
-
         const dataFromServer = await response.json();
         return dataFromServer;
     } catch (error) {
         console.error('Error fetching data:', error);
         return [];
     }
-};
-
-const data = await fetchData();
-data.forEach((item, i) => {
-    item.imgsource = require(`./assets/ProductsImg/${i + 1}.png`);
-});
-
-export default data;
+}
+const allYard = await fetchData(allYardAPI);
+const rentedYard = await fetchData(allYardRentedAPI);
+export { allYard, rentedYard }

@@ -9,20 +9,23 @@ import Shop from './pages/Shop'
 import Cart from './pages/Cart'
 import Rent from './pages/Rent';
 import { ShopContextProvider } from './contexts/ShopContext';
+import { RentContextProvider } from './contexts/RentContext'
 function App() {
   return (
     <div>
       <ShopContextProvider>
         <UserContextProvider>
-          <Router>
-            <Routes>
-              <Route path='/' element={<LoginSignup />}></Route>
-              <Route path='/homepage' element={<HomePage />}></Route>
-              <Route path='/cart' element={<Cart />}></Route>
-              <Route path='/shop' element={<Shop />}></Route>
-              <Route path='/rent' element={<Rent />}></Route>
-            </Routes>
-          </Router>
+          <RentContextProvider>
+            <Router>
+              <Routes>
+                <Route path='/' element={<LoginSignup />}></Route>
+                <Route path='/homepage' element={<HomePage />}></Route>
+                <Route path='/cart' element={<Cart />}></Route>
+                <Route path='/shop' element={<Shop />}></Route>
+                <Route path='/rent' element={<Rent />}></Route>
+              </Routes>
+            </Router>
+          </RentContextProvider>
         </UserContextProvider>
       </ShopContextProvider>
 

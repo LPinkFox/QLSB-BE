@@ -2,10 +2,13 @@ import React, { useContext } from 'react'
 import Navbar from '../components/Navbar'
 import Products from '../Products'
 import { ShopContext } from '../contexts/ShopContext'
+import { RentContext } from '../contexts/RentContext'
 import { CartItem } from './CartItem'
+import { YardItem } from './YardItem'
 import "./cart.css"
 const Cart = () => {
     const { cartItems, getTotalCartAmount } = useContext(ShopContext);
+    const { rentedYard, setRentedYard, getTotalAmountYard } = useContext(RentContext);
     return (
         <>
             <Navbar />
@@ -20,8 +23,13 @@ const Cart = () => {
                             }
                         })}
                     </div>
+                    <div className="yardItems">
+                        {rentedYard.map((yard) => {
+                            return <YardItem data={yard} />
+                        })}
+                    </div>
                     <div className="checkout">
-                        <p>Subtotal:{getTotalCartAmount()} VND</p>
+                        <p>Subtotal:{getTotalCartAmount() + getTotalAmountYard()} VND</p>
                     </div>
                 </div>
             </div>
