@@ -1,8 +1,8 @@
-const API_URL = 'https://sanbongbkhn.azurewebsites.net/NguoiDung/AllProduct';
+import { allProductAPI } from './API'
 
 const fetchData = async () => {
     try {
-        const response = await fetch(API_URL);
+        const response = await fetch(allProductAPI);
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
