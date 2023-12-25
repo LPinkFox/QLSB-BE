@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import './LoginSignup.css'
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../contexts/UserContext'
+import { logInAPI, signUpAPI } from '../API'
 const LoginSignup = () => {
     const [submit, setSubmit] = useState('Login');
     const [phoneNumber, setPhoneNumber] = useState('');
@@ -29,12 +30,11 @@ const LoginSignup = () => {
     const handerLogin = async () => {
         if (submit === 'Login') {
             try {
-                const loginAPI = 'https://sanbongbkhn.azurewebsites.net/NguoiDung/Login'
                 const data = {
-                    "soDienThoai": phoneNumber,
-                    "passWord": password
+                    "sdt": phoneNumber,
+                    "password": password
                 };
-                const response = await fetch(loginAPI, {
+                const response = await fetch(logInAPI, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -62,11 +62,10 @@ const LoginSignup = () => {
     const handerSignup = async () => {
         if (submit === 'Signup') {
             try {
-                const signUpAPI = 'https://sanbongbkhn.azurewebsites.net/NguoiDung/SignUp';
                 const data = {
-                    "soDienThoai": phoneNumber,
+                    "sdt": phoneNumber,
                     "hoTen": name,
-                    "passWord": password,
+                    "password": password,
                     "diaChi": adress,
                     "vaiTro": "user"
                 }
