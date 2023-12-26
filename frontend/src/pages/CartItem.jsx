@@ -13,7 +13,7 @@ export const CartItem = (props) => {
                 <p>
                     <b>{tenSanPham}</b>
                 </p>
-                <p>{giaBan}</p>
+                <p>Giá: {giaBan}VNĐ</p>
                 <div className="my-countHandler"> {/* Updated className */}
                     <button onClick={() => removeFromCart(id)}> - </button>
                     <input value={cartItems[id]} onChange={(e) => updateCartItemCount(e.target.value, id)} />

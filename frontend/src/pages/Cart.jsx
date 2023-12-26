@@ -10,7 +10,9 @@ import "./cart.css"; // Updated CSS file name
 const Cart = () => {
     const { cartItems, getTotalCartAmount } = useContext(ShopContext);
     const { rentedYard, setRentedYard, getTotalAmountYard } = useContext(RentContext);
+    const handlepay = () => {
 
+    }
     return (
         <>
             <Navbar />
@@ -30,7 +32,10 @@ const Cart = () => {
                         })}
                     </div>
                     <div className="my-checkout"> {/* Updated className */}
-                        <p>Subtotal:{getTotalCartAmount() + getTotalAmountYard()} VND</p>
+                        <p>Tổng tiền:{getTotalCartAmount() + getTotalAmountYard()} VND</p>
+                        <button onClick={() => {
+                            handlepay();
+                        }}>Thanh Toán</button>
                     </div>
                 </div>
             </div>

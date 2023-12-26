@@ -1,13 +1,13 @@
 import React, { useContext } from 'react'
 import { NavLink } from "react-router-dom"
-import { ShoppingCart } from "phosphor-react"
+import { ShoppingCart, User } from "phosphor-react"
 import { UserContext } from "../contexts/UserContext"
 import "./Navbar.css"
 const Navbar = () => {
     const { user } = useContext(UserContext);
     return (
         <nav>
-            <div className='username'>{user.hoTen}</div>
+            <div className='username'>Sân Bóng Bách Khoa</div>
             <ul>
                 <li>
                     <NavLink to="/shop">SHOP</NavLink>
@@ -18,6 +18,11 @@ const Navbar = () => {
                 <li>
                     <NavLink to={'/cart'}>
                         <ShoppingCart size={28} />
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink>
+                        <User size={32} weight="thin" />
                     </NavLink>
                 </li>
             </ul>

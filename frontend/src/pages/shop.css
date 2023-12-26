@@ -16,7 +16,7 @@
   border-radius: 15px;
   width: 300px;
   height: 350px;
-  margin: 100px;
+  margin: 110px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,7 +24,7 @@
 }
 
 .my-product img {
-  width: 400px;
+  width: 250px;
 }
 
 .my-product .my-description {
