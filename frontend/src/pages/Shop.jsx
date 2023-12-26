@@ -1,23 +1,23 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
+import React from 'react';
+import Navbar from '../components/Navbar';
 import Products from '../Products';
-import Product from './Product'
-import "./shop.css"
+import Product from './Product';
+import "./shop.css";
+
 const Shop = () => {
     console.log(Products);
     return (
         <>
             <Navbar />
-            <div className='shop'>
-                <div className="products">
+            <div className='my-shop'>
+                <div className="my-products">
                     {Products.map((product) => {
-                        return <Product data={product} />
+                        return <Product data={product} key={product.id} />;
                     })}
                 </div>
             </div>
         </>
-
-    )
+    );
 }
 
-export default Shop
+export default Shop;

@@ -1,4 +1,4 @@
-.container {
+.my-container {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
@@ -7,46 +7,46 @@
     margin-top: 200px;
 }
 
-.header {
+.my-header {
     text-align: center;
     margin-bottom: 20px;
 }
 
-.text {
+.my-text {
     font-size: 24px;
     font-weight: bold;
 }
 
-.underline {
+.my-underline {
     width: 50px;
     height: 2px;
     background-color: #333;
     margin: 10px auto;
 }
 
-.inputs {
+.my-inputs {
     margin-bottom: 20px;
 }
 
-.input {
+.my-input {
     margin-bottom: 10px;
 }
 
-input {
+.my-input input {
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
 }
 
-.submit-container {
+.my-submit-container {
     display: flex;
     gap: 30px;
     justify-content: space-between;
     margin: 60px auto;
 }
 
-.submit {
-    width: 48%; /* Adjust the width as needed */
+.my-submit {
+    width: 48%;
     padding: 10px;
     text-align: center;
     background-color: #007bff;
@@ -56,11 +56,11 @@ input {
     border-radius: 5px;
 }
 
-.submit:hover {
+.my-submit:hover {
     background-color: #0056b3;
 }
 
-.gray{
+.my-gray {
     background: #EAEAEA;
     color: #676767;
 }

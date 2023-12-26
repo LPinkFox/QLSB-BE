@@ -94,36 +94,39 @@ const LoginSignup = () => {
 
 
     return (
-        <div className="container">
-            <div className="header">
-                <div className="text">{submit}</div>
-                <div className="underline"></div>
+        <div className="my-container">
+            <div className="my-header">
+                <div className="my-text">{submit}</div>
+                <div className="my-underline"></div>
             </div>
-            <div className="inputs">
-
-                <div className="input">
+            <div className="my-inputs">
+                <div className="my-input">
                     <input placeholder='Số điện thoại' type="text" onChange={handerPhoneNumberChange} />
                 </div>
                 {
-                    submit === "Signup" ? <div className="input">
-                        <input placeholder='Họ và Tên' type="text" onChange={handerNameChange} />
-                    </div> : <></>
+                    submit === "Signup" ?
+                        <div className="my-input">
+                            <input placeholder='Họ và Tên' type="text" onChange={handerNameChange} />
+                        </div>
+                        : <></>
                 }
                 {
-                    submit === "Signup" ? <div className="input">
-                        <input placeholder='Địa chỉ' type="text" onChange={handerAdressChange} />
-                    </div> : <></>
+                    submit === "Signup" ?
+                        <div className="my-input">
+                            <input placeholder='Địa chỉ' type="text" onChange={handerAdressChange} />
+                        </div>
+                        : <></>
                 }
-                <div className="input">
+                <div className="my-input">
                     <input placeholder='Password' type="password" onChange={handerPassWordChange} />
                 </div>
             </div>
-            <div className="submit-container">
-                <div className={submit === "Login" ? "submit gray" : "submit"} onClick={() => { setSubmit('Signup'); handerSignup(); }}>Sign Up</div>
-                <div className={submit === "Signup" ? "submit gray" : "submit"} onClick={() => { setSubmit('Login'); handerLogin(); }} > Login</div>
+            <div className="my-submit-container">
+                <div className={submit === "Login" ? "my-submit my-gray" : "my-submit"} onClick={() => { setSubmit('Signup'); handerSignup(); }}>Sign Up</div>
+                <div className={submit === "Signup" ? "my-submit my-gray" : "my-submit"} onClick={() => { setSubmit('Login'); handerLogin(); }} > Login</div>
             </div>
-        </div >
+        </div>
     )
-
 }
+
 export default LoginSignup;
