@@ -15,37 +15,37 @@ export default function SideBar() {
           <hr className='text-white mt-2'/>
           <ul className='nav nav-pills flex-column mt-3'>
           <li className={active ===1? 'active nav-item p-2' :'nav-item p-2'} onClick={e => setActive(1)}>
-              <Link to = '/' className='p-1 d-flex text-decoration-none text-white'>
+              <Link to = '/admin' className='p-1 d-flex text-decoration-none text-white'>
                 <i className='bi bi-house-door me-3 fs-4'></i>
                 <span className='fs-4'>Trang Chủ</span>
               </Link>
             </li>
             <li className={active ===2? 'active nav-item p-2' :'nav-item p-2'} onClick={e => setActive(2)}>
-              <Link to = '/sanpham' className='p-1 d-flex text-decoration-none text-white'>
+              <Link to = '/admin/sanpham' className='p-1 d-flex text-decoration-none text-white'>
                 <i className='bi bi-box me-3 fs-4'></i>
                 <span className='fs-4'>Sản Phẩm</span>
               </Link>
             </li>
             <li className={active ===3? 'active nav-item p-2' :'nav-item p-2'} onClick={e => setActive(3)}>
-              <Link to = '/sanbong' className='p-1 d-flex text-decoration-none text-white'>
+              <Link to = '/admin/sanbong' className='p-1 d-flex text-decoration-none text-white'>
                 <i className='bi bi-building me-3 fs-4'></i>
                 <span className='fs-4'>Sân Bóng</span>
               </Link>
             </li>
             <li className={active ===4? 'active nav-item p-2' :'nav-item p-2'} onClick={e => setActive(4)}>
-              <Link to = '/taikhoan' className='p-1 d-flex text-decoration-none text-white'>
+              <Link to = '/admin/taikhoan' className='p-1 d-flex text-decoration-none text-white'>
                 <i className='bi bi-people me-3 fs-4'></i>
                 <span className='fs-4'>Tài Khoản</span>
               </Link>
             </li>
             <li className={active ===5? 'active nav-item p-2' :'nav-item p-2'} onClick={e => setActive(5)}>
-              <Link to = '/donhang' className='p-1 d-flex text-decoration-none text-white'>
+              <Link to = '/admin/donhang' className='p-1 d-flex text-decoration-none text-white'>
                 <i className='bi bi-table me-3 fs-4'></i>
                 <span className='fs-4'>Đơn Hàng</span>
               </Link>
             </li>
             <li className={active ===6? 'active nav-item p-2' :'nav-item p-2'} onClick={e => setActive(6)}>
-              <Link to = '/doanhthu' className='p-1 d-flex text-decoration-none text-white'>
+              <Link to = '/admin/doanhthu' className='p-1 d-flex text-decoration-none text-white'>
                 <i className='bi bi-bar-chart me-3 fs-4'></i>
                 <span className='fs-4'>Doanh Thu</span>
               </Link>

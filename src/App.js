@@ -10,7 +10,8 @@ import SanBong from './Component/SanBong';
 import TaiKhoan from './Component/TaiKhoan';
 import DonHang from './Component/DonHang';
 import DoanhThu from './Component/DoanhThu';
-import Navbar from './Navbar';
+import ChiTietDonHang from './Component/ChiTietDonHang';
+import TaiKhoanAdmin from './Component/TaiKhoanAdmin';
 function App() {
   return (
     <BrowserRouter>
@@ -20,12 +21,15 @@ function App() {
       </div>
       <div className='col overflow-auto'>
           <Routes>
-            <Route path='/' element = {<TrangChu/>}/>
-            <Route path='/sanpham' element = {<SanPham/>}/>
-            <Route path='/sanbong' element = {<SanBong/>}/>
-            <Route path='/taikhoan' element = {<TaiKhoan/>}/>
-            <Route path='/donhang' element = {<DonHang/>}/>
-            <Route path='/doanhthu' element = {<DoanhThu/>}/>
+            <Route path='/admin' element = {<TrangChu/>}/>
+            <Route path='/admin/sanpham' element = {<SanPham/>}/>
+            <Route path='/admin/sanbong' element = {<SanBong/>}/>
+            <Route path='/admin/taikhoan' element = {<TaiKhoan/>}/>
+            <Route path='/admin/donhang' element = {<DonHang/>}/>
+            <Route path='/admin/doanhthu' element = {<DoanhThu/>}/>
+            <Route path='/admin/donhang/:id' element = {<ChiTietDonHang/>}/>
+            <Route path='/admin/taikhoanadmin' element = {<TaiKhoanAdmin/>}/>
+
           </Routes>
       </div>
     </div>

@@ -1,30 +1,29 @@
 import React from 'react'
 import Navbar from '../Navbar'
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
-
-export default function TaiKhoan() {
+export default function TaiKhoanAdmin() {
     const [taikhoan, setTaikhoan] = useState([])
     useEffect(() => {
         loadData();
     }, [])
     const loadData = async () => {
-        const result = await axios.get("http://localhost:8080/api/admin/taikhoan")
+        const result = await axios.get("http://localhost:8080/api/admin/taikhoanadmin")
         setTaikhoan(result.data);
     }
     return (
         <>
             <Navbar />
             <div className='container '>
-            <h2 className='text-center p-2'> Danh Sách tài khoản người dùng</h2>
-                <div className='p-2'>
-                    
-                    <table className="table caption-top border shadow ">
+                <div className='p-5'>
+                    <h2 className='text-center'>Danh sách tài khoản Admin</h2>
+                    <table className="table caption-top border shadow my-5">
                         <thead>
                             <tr>
                                 <th scope="col">STT</th>
                                 <th scope="col">Họ Tên</th>
                                 <th scope="col">Số Điện Thoại</th>
+                                <th scope="col">Mật Khẩu</th>
                                 <th scope="col">Vai Trò</th>
                                 <th scope="col">Địa Chỉ</th>
                                 <th scope="col">Chức năng</th>
@@ -37,6 +36,7 @@ export default function TaiKhoan() {
                                         <th scope="row" key={index}>{index + 1}</th>
                                         <td>{taikhoan.hoTen}</td>
                                         <td>{taikhoan.sdt}</td>
+                                        <td>{taikhoan.password}</td>
                                         <td>{taikhoan.vaiTro}</td>
                                         <td>{taikhoan.diaChi}</td>
                                         <td>
