@@ -40,7 +40,7 @@ export default function SideBar() {
             </li>
             <li className={active ===5? 'active nav-item p-2' :'nav-item p-2'} onClick={e => setActive(5)}>
               <Link to = '/admin/donhang' className='p-1 d-flex text-decoration-none text-white'>
-                <i className='bi bi-table me-3 fs-4'></i>
+                <i className='bi bi-cart3 me-3 fs-4'></i>
                 <span className='fs-4'>Đơn Hàng</span>
               </Link>
             </li>

@@ -39,6 +39,7 @@ export default function DonHang() {
                             <tr>
                                 <th scope="col">STT</th>
                                 <th scope="col">Số điện thoại</th>
+                                <th scope="col">Người Đặt</th>
                                 <th scope="col">Ngày tạo</th>
                                 <th scope="col">Tổng tiền</th>
                                 <th scope="col">Trạng thái thanh toán</th>
@@ -51,6 +52,7 @@ export default function DonHang() {
                                     <tr>
                                         <th scope="row" key={index}>{index + 1 + idFist}</th>
                                         <td>{donhang.nguoiDung.sdt}</td>
+                                        <td>{donhang.nguoiDung.hoTen}</td>
                                         <td>{moment(donhang.ngayTao).format('D/M/Y H:mm:ss')}</td>
                                         <td>{donhang.tongTien}</td>
                                         <td>{donhang.trangThai}</td>
