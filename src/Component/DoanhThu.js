@@ -21,6 +21,7 @@ export default function DoanhThu() {
     }
     for (let i = 0; i < formatData.length; i++) {
       const curr = formatData[i];
+      //const Khoangcach = moment().diff(moment(curr.ngayTao), 'days') doanh thu 7 ngay gan nhat
       if (curr.trangThai === 'Chưa thanh toán') continue;
       let exist = -1;
       for (let j = 0; j < transformedData.length; j++) {
