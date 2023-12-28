@@ -79,9 +79,6 @@ export default function DonHang() {
                                                     <Link className='btn btn-primary mx-2 ' to={`/admin/donhang/${donhang.id}`}>
                                                         Chi tiết
                                                     </Link>
-                                                    <button className='btn btn-danger mx-2 '>
-                                                        Xóa
-                                                    </button>
                                                 </div>
                                             </td>
                                         </tr>

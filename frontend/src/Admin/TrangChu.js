@@ -17,8 +17,9 @@ export default function TrangChu() {
   }
   const donhangrecent = donhang.slice(0, 5)
   return (
-    <>
+    < >
       <Navbar />
+      <div className='' style={{height : '90vh'}}>
       <div className='container-fluid p-5'>
         <div className='row g-3 my-2'>
           <div className='col-md-2 '>
@@ -67,8 +68,7 @@ export default function TrangChu() {
             </div>
           </div>
         </div>
-      </div>
-      <table className="container table caption-top border shadow mt-2">
+        <table className="container table caption-top border shadow mt-2">
         <caption className='fs-4 text-dark'>Đơn đặt hàng gần đây</caption>
         <thead>
           <tr>
@@ -95,6 +95,8 @@ export default function TrangChu() {
           }
         </tbody>
       </table>
+      </div>
+      </div>
     </>
   )
 }
