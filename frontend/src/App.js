@@ -11,6 +11,7 @@ import Rent from './pages/Rent';
 import Admin from './pages/Admin';
 import { ShopContextProvider } from './contexts/ShopContext';
 import { RentContextProvider } from './contexts/RentContext'
+import AdminRoute from './AdminRoute';
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
                 <Route path='/cart' element={<Cart />}></Route>
                 <Route path='/shop' element={<Shop />}></Route>
                 <Route path='/rent' element={<Rent />}></Route>
-                <Route path='/admin' element={<Admin />}></Route>
+                <Route path='/admin/*' element={<AdminRoute/>}></Route>
               </Routes>
             </Router>
           </RentContextProvider>
