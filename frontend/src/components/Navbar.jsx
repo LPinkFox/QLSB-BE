@@ -8,7 +8,7 @@ const Navbar = () => {
     const { user } = useContext(UserContext);
     return (
         <nav>
-            <div className='username'>Sân Bóng Bách Khoa</div>
+            <div className='my-username'>Sân Bóng Bách Khoa</div>
             <ul>
                 <li>
                     <NavLink to="/shop">SHOP</NavLink>

@@ -46,7 +46,8 @@ const LoginSignup = () => {
                     // Xử lý khi request thành công
                     login(responseData);
                     alert(`Xin chào ${responseData.hoTen}`);
-                    navigate('/homepage');
+                    if (responseData.vaiTro === 'user') navigate('/homepage');
+                    else navigate('/admin');
 
                 } else {
                     // Xử lý khi request thất bại
