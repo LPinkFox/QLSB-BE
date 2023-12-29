@@ -29,7 +29,7 @@ export default function SideBar() {
             <li className={active ===3? 'active nav-item p-2' :'nav-item p-2'} onClick={e => setActive(3)}>
               <Link to = '/admin/sanbong' className='p-1 d-flex text-decoration-none text-white'>
                 <i className='bi bi-building me-3 fs-4'></i>
-                <span className='fs-4'>Sân Bóng</span>
+                <span className='fs-4'>Sân Đặt</span>
               </Link>
             </li>
             <li className={active ===4? 'active nav-item p-2' :'nav-item p-2'} onClick={e => setActive(4)}>
