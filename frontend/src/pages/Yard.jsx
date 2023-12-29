@@ -15,19 +15,22 @@ export const Yard = (props) => {
         rentContext.addToCart(yardInfo);
     };
     const isRented = rentedYard.some(
-        (yard) => yard.ngay === props.date && yard.kip === props.kip && yard.id === props.id
+        (yard) => yard.ngay === props.Date && yard.kip === props.kip && yard.id === props.id
     );
     return (
-        <div>
-            <h2>Sân số {props.id}</h2>
-            <h2>{props.date}</h2>
-            <h2>{props.kip}</h2>
-            <img
-                src={isRented ? unavailable : available}
-                alt={isRented ? 'Unavailable' : 'Available'}
-                style={{ width: '200px', height: '200px' }}
-            />
-            {isRented ? <></> : <button onClick={handleRentClick}>Đặt</button>}
-        </div>
+        props.date ?
+            (<div className="my-yard">
+                <div className="my-yard-decription">
+                    <img
+                        className="my-yard-image"
+                        src={isRented ? unavailable : available}
+                        alt={isRented ? 'Unavailable' : 'Available'}
+                    />
+                    <h2 className="my-yard-title">Sân số {props.id}</h2>
+                    <h2 className="my-yard-date">Ngày: {props.date}</h2>
+                    <h2 className="my-yard-kip">Kíp: {props.kip}</h2>
+                    {isRented ? <></> : <button className="my-yard-button" onClick={handleRentClick}>Đặt</button>}
+                </div>
+            </div>) : null
     );
 }

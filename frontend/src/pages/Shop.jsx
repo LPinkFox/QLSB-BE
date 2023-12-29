@@ -5,7 +5,6 @@ import Product from './Product';
 import "./shop.css";
 
 const Shop = () => {
-    console.log(Products);
     return (
         <>
             <Navbar />

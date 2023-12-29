@@ -1,0 +1,91 @@
+.my-yard-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.my-yard-title {
+    display: flex;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.my-yard-date-picker {
+    display: flex;
+    width: 200px;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-left: 0%;
+}
+
+.my-yard-select-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.my-yard-date-picker-label{
+    margin-right: 0px;
+}
+.my-yard-select-label {
+    margin-right: 10px;
+}
+
+.my-yard-select {
+    width: 200px;
+    padding: 10px;
+}
+.my-yard-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.my-yard {
+    flex: 0 0 calc(25% - 10px); /* Adjusted from 20% to 25% */
+    margin-bottom: 15px;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.my-yard-description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+.my-yard-image {
+    width: 50%;
+
+    height: auto;
+    margin: 0 25%;
+}
+
+.my-yard-title,
+.my-yard-date,
+.my-yard-kip {
+    margin: 0 0 10px;
+    color: #333;
+}
+
+.my-yard-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.my-yard-button:hover {
+    background-color: #0056b3;
+}

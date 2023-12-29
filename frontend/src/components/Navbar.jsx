@@ -2,10 +2,19 @@ import React, { useContext, useState } from 'react'
 import { NavLink } from "react-router-dom"
 import { ShoppingCart, User, UserGear, SignOut } from "phosphor-react"
 import { UserContext } from "../contexts/UserContext"
+import { RentContext } from "../contexts/RentContext"
+import { ShopContext } from "../contexts/ShopContext"
 import "./Navbar.css"
 const Navbar = () => {
     const [open, setOpen] = useState(false);
-    const { user } = useContext(UserContext);
+    const { user, resetUserContext } = useContext(UserContext);
+    const { resetShopContext } = useContext(ShopContext);
+    const { resetRentContext } = useContext(RentContext);
+    const handleLogout = () => {
+        resetUserContext();
+        resetShopContext();
+        resetRentContext();
+    }
     return (
         <nav>
             <div className='my-username'>Sân Bóng Bách Khoa</div>
@@ -38,7 +47,7 @@ const Navbar = () => {
                             <span></span>
                         </div>
                         <div className="my-sub-menu-link">
-                            <NavLink className={'lp'}>
+                            <NavLink to='/' className={'lp'} onClick={handleLogout}>
                                 <SignOut size={32} weight="thin" />
                                 <h3>Đăng xuất</h3>
                             </NavLink>

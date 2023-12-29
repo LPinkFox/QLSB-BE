@@ -13,8 +13,8 @@ const formatDate = (dateString) => {
     return isNaN(new Date(formattedDate).getTime()) ? "Invalid Date" : formattedDate;
 };
 const Cart = () => {
-    const { cartItems, getTotalCartAmount } = useContext(ShopContext);
-    const { rentedYard, getTotalAmountYard } = useContext(RentContext);
+    const { cartItems, getTotalCartAmount, resetShopContext } = useContext(ShopContext);
+    const { rentedYard, getTotalAmountYard, resetRentContext } = useContext(RentContext);
     const { user } = useContext(UserContext);
     console.log('cart');
     console.log(cartItems);
@@ -52,7 +52,8 @@ const Cart = () => {
                 console.log('Response from server:', responseText);
                 // Check if the responseText contains the success message
                 if (responseText === 'Nhập dữ liệu thành công') {
-
+                    resetShopContext();
+                    resetRentContext();
                     // Handle success here, e.g., show a success message to the user
                     alert('Đơn hàng đã được gửi thành công!');
                 } else {

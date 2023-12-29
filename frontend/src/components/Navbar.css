@@ -29,6 +29,7 @@ nav ul li .my-user-icon{
   margin: 0 0.5rem;
   border-radius: 0.5rem;
   margin-right: 30px;
+  width: 75%;
 }
 nav ul li a {
   display: block;
@@ -62,6 +63,7 @@ nav ul li .my-user-icon:not(.active):hover{
 }
 .my-user-info h3 {
   font-weight: 500;
+  color: white;
   margin-right: 10px; /* Add margin to separate icon and text */
 }
 .my-sub-menu hr{

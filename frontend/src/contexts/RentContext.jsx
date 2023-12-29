@@ -4,7 +4,9 @@ export const RentContext = createContext(null);
 
 export const RentContextProvider = (props) => {
     const [rentedYard, setRentedYard] = useState([]);
-
+    const resetRentContext = () => {
+        setRentedYard([]);
+    }
     const addToCart = (yardInfo) => {
         // Check if the yard is already in the rentedYard
         const isAlreadyInCart = rentedYard.some(
@@ -26,7 +28,7 @@ export const RentContextProvider = (props) => {
         return total;
     }
     return (
-        <RentContext.Provider value={{ rentedYard, setRentedYard, addToCart, getTotalAmountYard }}>
+        <RentContext.Provider value={{ rentedYard, setRentedYard, addToCart, getTotalAmountYard, resetRentContext }}>
             {props.children}
         </RentContext.Provider>
     );
