@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar'
 import axios from 'axios';
+import moment from 'moment';
 
 export default function SanBong() {
     const [sanbong, setSanBong] = useState([]);
@@ -9,23 +10,26 @@ export default function SanBong() {
         loadData();
     }, [])
     const loadData = async () => {
-        const result = await axios.get("http://localhost:8080/api/admin/sanbong")
+        const result = await axios.get("http://localhost:8080/api/admin/sanbongduocdat")
         setSanBong(result.data)
+        console.log(result.data)
     }
 
     return (
         <>
             <Navbar />
             <div className='container '>
-                <h2 className='text-center p-2'>Danh sách Sân bóng</h2>
+                <h2 className='text-center p-2'>Danh sách Sân bóng được đặt</h2>
                 <div className='p-2'>
                     <table className="table caption-top border shadow">
                         <thead>
                             <tr>
                                 <th scope="col">STT</th>
-                                <th scope="col">Tên Sân</th>
-                                <th scope="col">Giá Bán</th>
-                                <th scope="col">Chức năng</th>
+                                <th scope="col">Họ Tên</th>
+                                <th scope="col">Số điện thoại</th>
+                                <th scope="col">Tên sân</th>
+                                <th scope="col">Kíp</th>
+                                <th scope="col">Ngày</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -33,13 +37,12 @@ export default function SanBong() {
                                 sanbong.map((sanbong, index) => (
                                     <tr>
                                         <th scope="row" key={index}>{index + 1}</th>
+                                        <td>{sanbong.hoTen}</td>
+                                        <td>{sanbong.sdt}</td>
                                         <td>{sanbong.tenSan}</td>
-                                        <td>{sanbong.gia}</td>
-                                        <td>
-                                            <button className='btn btn-danger mx-2 '>
-                                                Xóa
-                                            </button>
-                                        </td>
+                                        <td>{sanbong.kip}</td>
+                                        <td>{moment(sanbong.ngay).format('DD/MM/Y')}</td>
+                                        
                                     </tr>
                                 ))
                             }
