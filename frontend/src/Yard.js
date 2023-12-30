@@ -12,6 +12,9 @@ const fetchData = async (APIlink) => {
         return [];
     }
 }
-const allYard = await fetchData(allYardAPI);
-const rentedYard = await fetchData(allYardRentedAPI);
-export { allYard, rentedYard }
+let allYard = await fetchData(allYardAPI);
+let rentedYard = await fetchData(allYardRentedAPI);
+const fetchYardData = async () => {
+    rentedYard = await fetchData(allYardRentedAPI);
+}
+export { allYard, rentedYard , fetchYardData}

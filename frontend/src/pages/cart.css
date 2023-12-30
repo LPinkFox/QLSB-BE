@@ -14,6 +14,7 @@
   border-radius: 25px;
   margin: 30px;
 }
+
 .my-yardItem {
   width: 700px;
   height: 250px;
@@ -27,6 +28,7 @@
 .my-cartItem img {
   width: 200px;
 }
+
 .my-yardItem img {
   width: 125px;
   margin-left: 20px;
@@ -60,3 +62,24 @@
   margin: 10px;
   cursor: pointer;
 }
+.my-cartItem .my-countHandler {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 50px;
+  width: 100px; /* Adjust this value to control the width */
+  height: 30px; /* Adjust this value to control the height */
+}
+.my-cartItem .my-countHandler button {
+  width: 30px; /* Adjust this value to control the width of the buttons */
+  height: 30px; /* Adjust this value to control the height of the buttons */
+  font-size: 14px; /* Adjust this value to control the font size of the buttons */
+}
+
+.my-cartItem .my-countHandler input {
+  width: 50px; /* Adjust this value to control the width of the input field */
+  height: 30px; /* Adjust this value to control the height of the input field */
+  font-size: 14px; /* Adjust this value to control the font size of the input field */
+}
+
+

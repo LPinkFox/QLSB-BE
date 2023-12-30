@@ -6,6 +6,7 @@ import { UserContext } from '../contexts/UserContext';
 import { RentContext } from '../contexts/RentContext';
 import { CartItem } from './CartItem';
 import { YardItem } from './YardItem';
+import { fetchYardData } from '../Yard';
 import "./cart.css"; // Updated CSS file name
 const formatDate = (dateString) => {
     const [month, day, year] = dateString.split('/');
@@ -34,7 +35,10 @@ const Cart = () => {
     console.log('Data to send:', JSON.stringify(dataToSend, null, 2));
     const handlepay = () => {
         const userId = user.id;
-
+        if (Object.keys(cartItems).filter(id => cartItems[id] > 0).length === 0 && rentedYard.length === 0) {
+            alert("giỏ hàng rỗng");
+            return;
+        }
         fetch(`http://localhost:8080/api/nguoidung/donhang/${userId}`, {
             method: 'POST',
             headers: {
@@ -54,6 +58,7 @@ const Cart = () => {
                 if (responseText === 'Nhập dữ liệu thành công') {
                     resetShopContext();
                     resetRentContext();
+                    fetchYardData();
                     // Handle success here, e.g., show a success message to the user
                     alert('Đơn hàng đã được gửi thành công!');
                 } else {
@@ -71,8 +76,7 @@ const Cart = () => {
         <>
             <Navbar />
             <div className='my-cart'> {/* Updated className */}
-                <div>
-                    <h1>Giỏ Hàng</h1>
+                    <h1 className='my-cart-title'>Giỏ Hàng</h1>
                     <div className="my-cartItems"> {/* Updated className */}
                         {Products.map((Product) => {
                             if (cartItems[Product.id] !== 0) {
@@ -86,12 +90,11 @@ const Cart = () => {
                         })}
                     </div>
                     <div className="my-checkout"> {/* Updated className */}
-                        <p>Tổng tiền:{getTotalCartAmount() + getTotalAmountYard()} VND</p>
-                        <button onClick={() => {
+                        <p className='my-cart-total-bill'>Tổng tiền:{getTotalCartAmount() + getTotalAmountYard()} VND</p>
+                        <button className='my-cart-button-pay' onClick={() => {
                             handlepay();
                         }}>Thanh Toán</button>
                     </div>
-                </div>
             </div>
         </>
     );

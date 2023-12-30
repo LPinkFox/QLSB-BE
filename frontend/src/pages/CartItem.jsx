@@ -10,14 +10,14 @@ export const CartItem = (props) => {
 
             <img src={imgsource} />
             <div className="my-description"> {/* Updated className */}
-                <p>
+                <p className='my-cart-product-name'>
                     <b>{tenSanPham}</b>
                 </p>
                 <p>Giá: {giaBan}VNĐ</p>
                 <div className="my-countHandler"> {/* Updated className */}
-                    <button className='my-button' onClick={() => removeFromCart(id)}> - </button>
-                    <input className='my-input' value={cartItems[id]} onChange={(e) => updateCartItemCount(e.target.value, id)} />
-                    <button className='my-button' onClick={() => addToCart(id)}> + </button>
+                    <button className='my-cart-button' onClick={() => removeFromCart(id)}> - </button>
+                    <input className='my-cart-input' value={cartItems[id]} onChange={(e) => updateCartItemCount(e.target.value, id)} />
+                    <button className='my-cart-button' onClick={() => addToCart(id)}> + </button>
                 </div>
             </div>
 

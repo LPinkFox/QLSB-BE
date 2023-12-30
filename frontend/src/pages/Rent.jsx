@@ -47,7 +47,7 @@ const Rent = () => {
                         {selectedTime === '' && <option value="Kíp">Kíp</option>}
                         {timeSlots.map((slot, index) => (
                             <option key={index} value={slot}>
-                                {slot}
+                                {slot} 
                             </option>
                         ))}
                     </select>
