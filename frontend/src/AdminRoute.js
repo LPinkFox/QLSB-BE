@@ -11,6 +11,7 @@ import DonHang from './Admin/DonHang'
 import DoanhThu from './Admin/DoanhThu'
 import ChiTietDonHang from './Admin/ChiTietDonHang'
 import TaiKhoanAdmin from './Admin/TaiKhoanAdmin'
+import SanDat from './Admin/SanDat'
 function AdminRoute() {
   return (
     <div className='d-flex min-vh-100'>
@@ -22,6 +23,7 @@ function AdminRoute() {
             <Route path='/' element = {<TrangChu/>}/>
             <Route path='/sanpham' element = {<SanPham/>}/>
             <Route path='/sanbong' element = {<SanBong/>}/>
+            <Route path='/sandat' element= {<SanDat/>}/>
             <Route path='/taikhoan' element = {<TaiKhoan/>}/>
             <Route path='/donhang' element = {<DonHang/>}/>
             <Route path='/doanhthu' element = {<DoanhThu/>}/>

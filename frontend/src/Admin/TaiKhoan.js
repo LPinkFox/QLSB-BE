@@ -15,7 +15,7 @@ export default function TaiKhoan() {
     return (
         <>
             <Navbar />
-            <div className='container '>
+            <div className='container ' style={{ height: '90vh' }}>
             <h2 className='text-center p-2'> Danh Sách tài khoản người dùng</h2>
                 <div className='p-2'>
                     
@@ -27,7 +27,6 @@ export default function TaiKhoan() {
                                 <th scope="col">Số Điện Thoại</th>
                                 <th scope="col">Vai Trò</th>
                                 <th scope="col">Địa Chỉ</th>
-                                <th scope="col">Chức năng</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -39,11 +38,6 @@ export default function TaiKhoan() {
                                         <td>{taikhoan.sdt}</td>
                                         <td>{taikhoan.vaiTro}</td>
                                         <td>{taikhoan.diaChi}</td>
-                                        <td>
-                                            <button className='btn btn-danger mx-2 '>
-                                                Xóa
-                                            </button>
-                                        </td>
                                     </tr>
                                 ))
                             }

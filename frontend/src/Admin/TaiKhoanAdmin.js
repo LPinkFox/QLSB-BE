@@ -14,7 +14,7 @@ export default function TaiKhoanAdmin() {
     return (
         <>
             <Navbar />
-            <div className='container '>
+            <div className='container ' style={{ height: '90vh' }}>
                 <div className='p-5'>
                     <h2 className='text-center'>Danh sách tài khoản Admin</h2>
                     <table className="table caption-top border shadow my-5">
@@ -26,7 +26,6 @@ export default function TaiKhoanAdmin() {
                                 <th scope="col">Mật Khẩu</th>
                                 <th scope="col">Vai Trò</th>
                                 <th scope="col">Địa Chỉ</th>
-                                <th scope="col">Chức năng</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -39,11 +38,6 @@ export default function TaiKhoanAdmin() {
                                         <td>{taikhoan.password}</td>
                                         <td>{taikhoan.vaiTro}</td>
                                         <td>{taikhoan.diaChi}</td>
-                                        <td>
-                                            <button className='btn btn-danger mx-2 '>
-                                                Xóa
-                                            </button>
-                                        </td>
                                     </tr>
                                 ))
                             }
