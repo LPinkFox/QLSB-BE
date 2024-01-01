@@ -66,6 +66,7 @@ export default function SanPham() {
                 </div>
                 <h2 className='text-center'>Cập nhật sản phẩm : {sp.tenSanPham} </h2>
                 {check ? (<div className="input-group w-50 mb-3 mx-auto">
+                    <caption>Nhập giá mới</caption>
                     <input
                         type="number"
                         className="form-control mx-2"
@@ -74,6 +75,7 @@ export default function SanPham() {
                         required
                         onChange={(e) => setGia(e.target.value)}
                     />
+                    <caption>Nhập số lượng mới</caption>
                     <input
                         type="number"
                         className="form-control mx-2"

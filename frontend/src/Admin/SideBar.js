@@ -6,7 +6,7 @@ export default function SideBar() {
   const [active, setActive] = useState(0)
 
   return (
-    <div className='sidebar d-flex justify-content-between flex-column bg-dark text-white p-3 min-vh-100 flex-grow'>
+    <div className='sidebar d-flex justify-content-between flex-column text-white p-3 min-vh-100 flex-grow' style={{backgroundColor: '#FF6600'}}>
       <div>
           <div className='p-1'>
             <i className='bi bi-code-slash fs-4 me-4 '></i>

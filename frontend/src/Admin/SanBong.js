@@ -53,7 +53,7 @@ export default function SanBong() {
                                         <td>{sanbong.gia}</td>
                                         <td>
                                             <button className='btn btn-success mx-2' onClick={()=>handleClick(sanbong)}>
-                                                Chỉnh sửa
+                                                Cập nhật
                                             </button>
                                         </td>
                                     </tr>
@@ -64,6 +64,7 @@ export default function SanBong() {
                 </div>
                 <h2 className='text-center'>Cập nhật sân bóng : {sb.tenSan} </h2>
                 {check ? (<div className="input-group w-50 mb-3 mx-auto">
+                    <caption>Nhập giá mới</caption>
                     <input
                         type="number"
                         className="form-control mx-2"

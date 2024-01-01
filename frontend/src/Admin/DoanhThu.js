@@ -11,14 +11,14 @@ export default function DoanhThu() {
   useEffect(() => {
     loadData();
   }, []);
-  const transformedData1 = Array.from({ length: 12 }, (_, monthIndex) => {
-    const month = monthIndex + 1;
-    return { ngayTao: month, Amount: 0 };
-  });
 
   const loadData = async () => {
     const result = await axios.get("http://localhost:8080/api/admin/danhsachdonhang")
     const transformedData = [];
+    const transformedData1 = Array.from({ length: 12 }, (_, monthIndex) => {
+      const month = monthIndex + 1;
+      return { ngayTao: month, Amount: 0 };
+    });
     result.data.reverse();//do ban dau lay giu lieu nguoc
     const formatData = result.data;
     for (let i = 0; i < formatData.length; i++) {
