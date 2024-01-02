@@ -19,6 +19,11 @@ export const RentContextProvider = (props) => {
             setRentedYard((prevRentedYard) => [...prevRentedYard, yardInfo]);
         }
     };
+    const removeFromCart = (date, kip, id) => {
+        setRentedYard((prevRentedYard) =>
+            prevRentedYard.filter((yard) => yard.id !== id || yard.date !== date || yard.kip !== kip)
+        );
+    }
     const getTotalAmountYard = () => {
         let total = 0;
         console.log(rentedYard);
@@ -28,7 +33,7 @@ export const RentContextProvider = (props) => {
         return total;
     }
     return (
-        <RentContext.Provider value={{ rentedYard, setRentedYard, addToCart, getTotalAmountYard, resetRentContext }}>
+        <RentContext.Provider value={{ rentedYard, setRentedYard, addToCart, getTotalAmountYard, resetRentContext, removeFromCart }}>
             {props.children}
         </RentContext.Provider>
     );

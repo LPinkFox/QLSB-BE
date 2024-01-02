@@ -17,7 +17,7 @@ const Navbar = () => {
     }
     return (
         <nav>
-            <div className='my-username'>Sân Bóng Bách Khoa</div>
+            <NavLink className="my-navbar-title" to="/homepage">Sân Bóng Bách Khoa</NavLink>
             <ul>
                 <li>
                     <NavLink to="/shop">SHOP</NavLink>

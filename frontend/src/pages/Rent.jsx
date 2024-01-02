@@ -55,7 +55,7 @@ const Rent = () => {
             </div>
             {hasSelected && formattedDate && <div className="my-yard-container">
                 {allYard.map((yard) => {
-                    return <Yard className="my-yard" date={formattedDate} id={yard.id} kip={timeSlots.indexOf(selectedTime) + 1} />
+                    return <Yard className="my-yard" date={formattedDate} id={yard.id} kip={timeSlots.indexOf(selectedTime) + 1} giaSan={yard.gia} />
                 })}
             </div>}
         </>

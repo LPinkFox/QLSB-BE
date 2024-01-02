@@ -5,7 +5,7 @@
     cursor: pointer;
 }
 
-.active{
+.active:not(.my-navbar-title){
     background-color: #339900;
     border-radius: 5px;
 }

@@ -5,7 +5,7 @@ import available from '../assets/Yards/available.png'
 export const YardItem = (props) => {
     const { id, date, kip } = props.data;
     const selectedYard = allYard.find((yard) => yard.id === id);
-    const { rentedYard, setRentedYard, addToCart } = useContext(RentContext);
+    const {  removeFromCart} = useContext(RentContext);
 
     return (
         <div className='my-yardItem'> {/* Updated className */}
@@ -18,6 +18,7 @@ export const YardItem = (props) => {
                 <p>Kíp: {kip}</p>
                 <p>Giá Thuê: {selectedYard.gia} VNĐ</p>
             </div>
+            <button className='my-yard-button' onClick={() => removeFromCart(date,kip, id)}>Xóa</button>
         </div>
     );
 }
