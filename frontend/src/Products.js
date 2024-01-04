@@ -15,9 +15,9 @@ const fetchData = async () => {
     }
 };
 
-const data = await fetchData();
-data.forEach((item, i) => {
+const Products = await fetchData();
+Products.forEach((item, i) => {
     item.imgsource = require(`./assets/ProductsImg/${i + 1}.png`);
 });
 
-export default data;
+export default Products;

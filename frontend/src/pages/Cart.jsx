@@ -17,15 +17,13 @@ const Cart = () => {
     const { cartItems, getTotalCartAmount, resetShopContext } = useContext(ShopContext);
     const { rentedYard, getTotalAmountYard, resetRentContext } = useContext(RentContext);
     const { user } = useContext(UserContext);
-    console.log('cart');
-    console.log(cartItems);
     const dataToSend = {
-        donHangSanPham: Object.keys(cartItems)
-            .filter(id => cartItems[id] > 0) // Only include products with quantity > 0
-            .map(id => ({
-                id: parseInt(id),
-                soLuongMua: cartItems[id],
-            })),
+        donHangSanPham: Object.values(cartItems)
+        .filter(item => item.soLuong > 0)
+        .map(item => ({
+            id: item.id,
+            soLuongMua: item.soLuong,
+        })),
         donHangSanBong: rentedYard.map(yard => ({
             id: yard.id,
             kip: yard.kip,
@@ -76,25 +74,25 @@ const Cart = () => {
         <>
             <Navbar />
             <div className='my-cart'> {/* Updated className */}
-                    <h1 className='my-cart-title'>Giỏ Hàng</h1>
-                    <div className="my-cartItems"> {/* Updated className */}
-                        {Products.map((Product) => {
-                            if (cartItems[Product.id] !== 0) {
-                                return <CartItem data={Product} />
-                            }
-                        })}
-                    </div>
-                    <div className="my-yardItems"> {/* Updated className */}
-                        {rentedYard.map((yard) => {
-                            return <YardItem data={yard} />
-                        })}
-                    </div>
-                    <div className="my-checkout"> {/* Updated className */}
-                        <p className='my-cart-total-bill'>Tổng tiền:{getTotalCartAmount() + getTotalAmountYard()} VND</p>
-                        <button className='my-cart-button-pay' onClick={() => {
-                            handlepay();
-                        }}>Thanh Toán</button>
-                    </div>
+                <h1 className='my-cart-title'>Giỏ Hàng</h1>
+                <div className="my-cartItems"> {/* Updated className */}
+                    {cartItems.map((item) => {
+                        if (item.soLuong !== 0) {
+                            return <CartItem data={item} />
+                        }
+                    })}
+                </div>
+                <div className="my-yardItems"> {/* Updated className */}
+                    {rentedYard.map((yard) => {
+                        return <YardItem data={yard} />
+                    })}
+                </div>
+                <div className="my-checkout"> {/* Updated className */}
+                    <p className='my-cart-total-bill'>Tổng tiền:{getTotalCartAmount() + getTotalAmountYard()} VND</p>
+                    <button className='my-cart-button-pay' onClick={() => {
+                        handlepay();
+                    }}>Thanh Toán</button>
+                </div>
             </div>
         </>
     );

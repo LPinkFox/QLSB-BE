@@ -26,7 +26,6 @@ export const RentContextProvider = (props) => {
     }
     const getTotalAmountYard = () => {
         let total = 0;
-        console.log(rentedYard);
         rentedYard.forEach((yard) => {
             total += allYard[yard.id - 1].gia;
         })

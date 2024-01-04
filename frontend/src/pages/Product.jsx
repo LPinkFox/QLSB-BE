@@ -3,8 +3,8 @@ import { ShopContext } from '../contexts/ShopContext';
 const Product = (props) => {
     const { id, giaBan, soLuongKho, tenSanPham, imgsource } = props.data;
     const { addToCart, cartItems } = useContext(ShopContext);
-    const cartItemCount = cartItems[id];
-
+    const cartItemCount = cartItems.filter(item => item.id === id)[0].soLuong;
+    
     return (
         <div className="my-product">
             <img src={imgsource} />

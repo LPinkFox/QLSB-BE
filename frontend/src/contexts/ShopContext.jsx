@@ -2,9 +2,9 @@ import React, { createContext, useState } from 'react'
 import Products from "../Products.js"
 export const ShopContext = createContext(null);
 const getDefaultCart = () => {
-    let cart = {};
-    for (let i = 1; i < Products.length + 1; i++) {
-        cart[i] = 0;
+    let cart = Products;
+    for (let i = 0; i < cart.length; i++) {
+        cart[i].soLuong = 0;
     }
     return cart;
 };
@@ -17,24 +17,35 @@ export const ShopContextProvider = (props) => {
     const getTotalCartAmount = () => {
         let totalAmount = 0;
         for (const item in cartItems) {
-            if (cartItems[item] > 0) {
-                let itemInfo = Products.find((product) => product.id === Number(item));
-                totalAmount += cartItems[item] * itemInfo.giaBan;
+            if (cartItems[item].soLuong > 0) {
+                totalAmount += cartItems[item].soLuong * cartItems[item].giaBan;
             }
         }
         return totalAmount;
     };
 
     const addToCart = (sanPhamID) => {
-        setCartItems((prev) => ({ ...prev, [sanPhamID]: prev[sanPhamID] + 1 }));
+        setCartItems(prevCartItems => 
+            prevCartItems.map(item => 
+                item.id === sanPhamID ? { ...item, soLuong: item.soLuong + 1 } : item
+            )
+        );
     };
 
     const removeFromCart = (sanPhamID) => {
-        setCartItems((prev) => ({ ...prev, [sanPhamID]: prev[sanPhamID] - 1 }));
+        setCartItems(prevCartItems => 
+            prevCartItems.map(item => 
+                item.id === sanPhamID ? { ...item, soLuong: item.soLuong - 1 } : item
+            )
+        );
     };
 
     const updateCartItemCount = (newAmount, sanPhamID) => {
-        setCartItems((prev) => ({ ...prev, [sanPhamID]: newAmount }));
+        setCartItems(prevCartItems => 
+            prevCartItems.map(item => 
+                item.id === sanPhamID ? { ...item, soLuong: newAmount } : item
+            )
+        );
     };
 
     const checkout = () => {
