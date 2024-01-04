@@ -1,9 +1,9 @@
 
 import './App.css';
-import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import React, {useContext} from 'react'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import LoginSignup from './pages/LoginSignup'
-import { UserContextProvider } from './contexts/UserContext';
+import { UserContext, UserContextProvider } from './contexts/UserContext';
 import HomePage from './pages/HomePage';
 import Shop from './pages/Shop'
 import Cart from './pages/Cart'
@@ -11,7 +11,6 @@ import Rent from './pages/Rent'
 import { ShopContextProvider } from './contexts/ShopContext';
 import { RentContextProvider } from './contexts/RentContext'
 import AdminRoute from './AdminRoute';
-
 function App() {
   return (
     <div>

@@ -1,5 +1,5 @@
-import React from 'react'
-import { BrowserRouter,Routes, Route } from 'react-router-dom'
+import React, {useContext} from 'react'
+import { BrowserRouter,Routes, Route, Navigate } from 'react-router-dom'
 import SideBar from './Admin/SideBar'
 import TrangChu from './Admin/TrangChu'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -12,7 +12,13 @@ import DoanhThu from './Admin/DoanhThu'
 import ChiTietDonHang from './Admin/ChiTietDonHang'
 import TaiKhoanAdmin from './Admin/TaiKhoanAdmin'
 import SanDat from './Admin/SanDat'
+import { UserContext } from './contexts/UserContext'
+
 function AdminRoute() {
+  const{isLoggedin} = useContext(UserContext)
+  if(!isLoggedin) {
+    return <Navigate to='/'/>
+  }
   return (
     <div className='d-flex min-vh-100'>
       <div className='w-auto'>
@@ -29,7 +35,6 @@ function AdminRoute() {
             <Route path='/doanhthu' element = {<DoanhThu/>}/>
             <Route path='/donhang/:id' element = {<ChiTietDonHang/>}/>
             <Route path='/taikhoanadmin' element = {<TaiKhoanAdmin/>}/>
-
           </Routes>
       </div>
     </div>
