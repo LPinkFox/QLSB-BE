@@ -41,21 +41,29 @@ const LoginSignup = () => {
                     },
                     body: JSON.stringify(data),
                 });
-                const responseData = await response.json();
-                if (response.ok) {
-                    // Xử lý khi request thành công
-                    login(responseData);
-                    alert(`Xin chào ${responseData.hoTen}`);
-                    if (responseData.vaiTro === 'User') navigate('/homepage');
-                    else navigate('/admin');
-
-                } else {
-                    // Xử lý khi request thất bại
-                    alert('Đăng nhập thất bại');
+            
+                if (!response.ok) {
+                    throw new Error('HTTP error ' + response.status);
                 }
+            
+                const responseData = await response.json();
+            
+                // Xử lý khi request thành công
+                login(responseData);
+                alert(`Xin chào ${responseData.hoTen}`);
+                if (responseData.vaiTro.toLowerCase() === 'user') navigate('/homepage');
+                else navigate('/admin');
             } catch (error) {
-                console.log(error);
-                alert('Lỗi server');
+                if (error.message === 'HTTP error 401') {
+                    // Xử lý khi password incorrect
+                    alert('Password incorrect');
+                } else if (error.message === 'HTTP error 404') {
+                    // Xử lý khi account doesn't exist
+                    alert('Account does not exist');
+                } else {
+                    // Xử lý khi có lỗi xảy ra
+                    console.error('An error occurred:', error);
+                }
             }
         }
     };
