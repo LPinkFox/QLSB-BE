@@ -46,7 +46,7 @@ const LoginSignup = () => {
                     // Xử lý khi request thành công
                     login(responseData);
                     alert(`Xin chào ${responseData.hoTen}`);
-                    if (responseData.vaiTro === 'user') navigate('/homepage');
+                    if (responseData.vaiTro === 'User') navigate('/homepage');
                     else navigate('/admin');
 
                 } else {
@@ -67,8 +67,7 @@ const LoginSignup = () => {
                     "sdt": phoneNumber,
                     "hoTen": name,
                     "password": password,
-                    "diaChi": adress,
-                    "vaiTro": "user"
+                    "diaChi": adress
                 }
                 const response = await fetch(signUpAPI, {
                     method: 'POST',
