@@ -27,11 +27,13 @@ export const Yard = (props) => {
                         src={isRented ? unavailable : available}
                         alt={isRented ? 'Unavailable' : 'Available'}
                     />
-                    <h2 className="my-yard-title">Sân số {props.id}</h2>
-                    <h2 className="my-yard-date">Ngày: {moment(props.date, 'MM/DD/YYYY').format('DD/MM/YYYY')}</h2>
-                    <h2 className="my-yard-kip">Kíp: {props.kip}</h2>
-                    <h2 className="my-yard-price">Giá: {props.giaSan} VND</h2>
+                    <h3 className="my-yard-title">Sân số {props.id}</h3>
+                    <h5 className="my-yard-date">Ngày: {moment(props.date, 'MM/DD/YYYY').format('DD/MM/YYYY')}</h5>
+                    <h5 className="my-yard-kip">Kíp: {props.kip}</h5>
+                    <h5 className="my-yard-price">Giá: {props.giaSan.toLocaleString()} VND</h5>
+                    <div className='my-yard-div'>
                     {isRented ? <></> : <button className="my-yard-button" onClick={handleRentClick}>Đặt</button>}
+                    </div>
                 </div>
             </div>) : null
     );
