@@ -50,7 +50,6 @@
   width: 100%;
   font-size: 30px;
 }
-
 .my-yard-names {
   margin-bottom: 30px;
 }
@@ -93,5 +92,8 @@
   height: 30px; /* Adjust this value to control the height of the input field */
   font-size: 14px; /* Adjust this value to control the font size of the input field */
 }
-
+.my-cart-total-bill {
+  color: red;
+  font-size: 30px;
+}
 

@@ -13,7 +13,7 @@ export const CartItem = (props) => {
                 <h3 className='my-cart-product-name'>
                     <b>{tenSanPham}</b>
                 </h3>
-                <h4>Giá: {giaBan}VNĐ</h4>
+                <h4>Giá: <span style={{color:'red'}}>{giaBan.toLocaleString()}</span> VNĐ</h4>
                 <div className="my-countHandler"> {/* Updated className */}
                     <button className='my-cart-button' onClick={() => removeFromCart(id)}> - </button>
                     <input className='my-cart-input' value={soLuong} onChange={(e) => updateCartItemCount(e.target.value, id)} />

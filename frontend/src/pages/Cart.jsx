@@ -88,7 +88,7 @@ const Cart = () => {
                     })}
                 </div>
                 <div className="my-checkout"> {/* Updated className */}
-                    <p className='my-cart-total-bill'>Tổng tiền:{getTotalCartAmount() + getTotalAmountYard()} VND</p>
+                    <p className='my-cart-total-bill'>Tổng tiền: {(getTotalCartAmount() + getTotalAmountYard()).toLocaleString()} VND</p>
                     <button className='my-cart-button-pay' onClick={() => {
                         handlepay();
                     }}>Thanh Toán</button>

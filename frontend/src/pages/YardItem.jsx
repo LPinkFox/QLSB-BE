@@ -16,7 +16,7 @@ export const YardItem = (props) => {
                 </h3>
                 <h4>Ngày: {date}</h4>
                 <h4>Kíp: {kip}</h4>
-                <h4>Giá Thuê: {selectedYard.gia.toLocaleString()} VNĐ</h4>
+                <h4>Giá Thuê: <span style={{color:'red'}}>{selectedYard.gia.toLocaleString()}</span>  VNĐ</h4>
             </div>
             <button className='my-yard-button' onClick={() => removeFromCart(date,kip, id)}>Xóa</button>
         </div>
