@@ -28,6 +28,11 @@
 .my-cartItem img {
   width: 200px;
 }
+.my-cart-product-name {
+  width: 100%;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
 
 .my-yardItem img {
   width: 125px;
@@ -44,6 +49,13 @@
 .my-yardItem .my-description {
   width: 100%;
   font-size: 30px;
+}
+
+.my-yard-names {
+  margin-bottom: 30px;
+}
+.my-yard-button {
+  margin-right: 20px;
 }
 
 .my-countHandler input {

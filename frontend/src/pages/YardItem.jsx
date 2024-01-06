@@ -11,12 +11,12 @@ export const YardItem = (props) => {
         <div className='my-yardItem'> {/* Updated className */}
             <img src={available} className='' />
             <div className="my-description"> {/* Updated className */}
-                <p>
+                <h3 className='my-yard-names'>
                     <b>{selectedYard.tenSan}</b>
-                </p>
-                <p>Ngày: {date}</p>
-                <p>Kíp: {kip}</p>
-                <p>Giá Thuê: {selectedYard.gia} VNĐ</p>
+                </h3>
+                <h4>Ngày: {date}</h4>
+                <h4>Kíp: {kip}</h4>
+                <h4>Giá Thuê: {selectedYard.gia.toLocaleString()} VNĐ</h4>
             </div>
             <button className='my-yard-button' onClick={() => removeFromCart(date,kip, id)}>Xóa</button>
         </div>
