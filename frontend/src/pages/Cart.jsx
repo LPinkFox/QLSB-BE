@@ -9,7 +9,7 @@ import { YardItem } from './YardItem';
 import { fetchYardData } from '../Yard';
 import "./cart.css"; // Updated CSS file name
 const formatDate = (dateString) => {
-    const [month, day, year] = dateString.split('/');
+    const [day, month, year] = dateString.split('/');
     const formattedDate = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
     return isNaN(new Date(formattedDate).getTime()) ? "Invalid Date" : formattedDate;
 };

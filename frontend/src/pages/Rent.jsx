@@ -6,6 +6,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import './Rent.css';
 import { allYard } from '../Yard'
 import { Yard } from './Yard';
+
 const Rent = () => {
     const [selectedDate, setSelectedDate] = useState(null);
     const [selectedTime, setSelectedTime] = useState('');
@@ -22,9 +23,15 @@ const Rent = () => {
             setHasSelected(true);
         }
     }, [selectedDate, selectedTime]);
-    const formattedDate = selectedDate ? selectedDate.toLocaleDateString() : '';
+    const formattedDate = selectedDate 
+    ? selectedDate.toLocaleDateString('en-GB', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+      })
+    : '';
+    // console.log(formattedDate);
     const timeSlots = ['Kíp 1', 'Kíp 2', 'Kíp 3', 'Kíp 4', 'Kíp 5'];
-
     return (
         <>
             <Navbar />
@@ -47,7 +54,7 @@ const Rent = () => {
                         {selectedTime === '' && <option value="Kíp">Kíp</option>}
                         {timeSlots.map((slot, index) => (
                             <option key={index} value={slot}>
-                                {slot} 
+                                {slot}
                             </option>
                         ))}
                     </select>
