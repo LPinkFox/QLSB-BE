@@ -6,6 +6,8 @@
   font-weight: bold;
   background: #0f172a;
   text-decoration: none;
+  margin-left: 16px;
+  color: white;
   /* Add any other styles you want for the title */
 }
 nav {
@@ -90,7 +92,12 @@ nav ul li .my-user-icon:not(.active):hover{
 .my-sub-menu-link .lp{
   width: 100%;
   display: flex;
-  background: white;
+  background: white !important;
+  text-decoration: none !important;
+}
+.my-sub-menu-link .lp .lp2 {
+  margin-left: 20px;
+
 }
 .my-sub-menu-wrap.active{
   opacity: 1;

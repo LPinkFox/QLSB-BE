@@ -18,7 +18,7 @@ const Navbar = () => {
     return (
         <nav>
             <NavLink className="my-navbar-title" to="/homepage">Sân Bóng Bách Khoa</NavLink>
-            <ul>
+            <ul className='my-navbar-text-item'>
                 <li>
                     <NavLink to="/shop">SHOP</NavLink>
                 </li>
@@ -42,14 +42,14 @@ const Navbar = () => {
                         <div className="my-sub-menu-link">
                             <NavLink className={'lp'}>
                                 <UserGear size={32} weight="thin" />
-                                <h3>Thông tin người dùng</h3>
+                                <h5 className='lp2'>Thông tin người dùng</h5>
                             </NavLink>
                             <span></span>
                         </div>
                         <div className="my-sub-menu-link">
                             <NavLink to='/' className={'lp'} onClick={handleLogout}>
                                 <SignOut size={32} weight="thin" />
-                                <h3>Đăng xuất</h3>
+                                <h5 className='lp2'>Đăng xuất</h5>
                             </NavLink>
                             <span></span>
                         </div>
