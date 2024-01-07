@@ -16,8 +16,9 @@ export const Yard = (props) => {
         rentContext.addToCart(yardInfo);
     };
     const isRented = rentedYard.some(
-        (yard) => moment(yard.ngay, 'YYYY-MM-DD').isSame(moment(props.date, 'DD/MM/YYYY'), 'day') && yard.kip === props.kip && yard.idSanBong === props.id
+        (yard) => moment(yard.ngay, 'YYYY-MM-DD').isSame(moment(props.date, 'MM/DD/YYYY'), 'day') && yard.kip === props.kip && yard.idSanBong === props.id
     );
+    console.log(props.date);
     return (
         props.date ?
             (<div className="my-yard">
