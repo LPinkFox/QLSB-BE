@@ -16,7 +16,7 @@ export const Yard = (props) => {
         rentContext.addToCart(yardInfo);
     };
     const isRented = rentedYard.some(
-        (yard) => moment(yard.ngay, 'YYYY-MM-DD').isSame(moment(props.date, 'MM/DD/YYYY'), 'day') && yard.kip === props.kip && yard.idSanBong === props.id
+        (yard) => moment(yard.ngay, 'YYYY-MM-DD').isSame(moment(props.date, 'DD/MM/YYYY'), 'day') && yard.kip === props.kip && yard.idSanBong === props.id
     );
     return (
         props.date ?
@@ -28,7 +28,7 @@ export const Yard = (props) => {
                         alt={isRented ? 'Unavailable' : 'Available'}
                     />
                     <h3 className="my-yard-title">Sân số {props.id}</h3>
-                    <h5 className="my-yard-date">Ngày: {moment(props.date, 'MM/DD/YYYY').format('DD/MM/YYYY')}</h5>
+                    <h5 className="my-yard-date">Ngày: {moment(props.date, 'DD/MM/YYYY').format('DD/MM/YYYY')}</h5>
                     <h5 className="my-yard-kip">Kíp: {props.kip}</h5>
                     <h5 className="my-yard-price">Giá: {props.giaSan.toLocaleString()} VND</h5>
                     <div className='my-yard-div'>
