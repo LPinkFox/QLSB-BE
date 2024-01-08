@@ -28,7 +28,7 @@ export const Yard = (props) => {
                         alt={isRented ? 'Unavailable' : 'Available'}
                     />
                     <h3 className="my-yard-title">Sân số {props.id}</h3>
-                    <h5 className="my-yard-date">Ngày: {moment(props.date, 'MM/DD/YYYY').format('DD/MM/YYYY')}</h5>
+                    <h5 className="my-yard-date">Ngày: {moment(props.date, 'DD/MM/YYYY').format('DD/MM/YYYY')}</h5>
                     <h5 className="my-yard-kip">Kíp: {props.kip}</h5>
                     <h5 className="my-yard-price">Giá: {props.giaSan.toLocaleString()} VND</h5>
                     <div className='my-yard-div'>
