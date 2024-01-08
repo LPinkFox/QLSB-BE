@@ -64,3 +64,10 @@
     background: #EAEAEA;
     color: #676767;
 }
+.my-forgot-password:hover {
+    color: blue; /* Change the text color to blue when hovered */
+    cursor: pointer; /* Change the cursor to a pointer when hovered */
+}
+.my-forgot-password {
+    display: inline-block;
+}
